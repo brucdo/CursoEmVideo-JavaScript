@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação</title>
+</head>
+<body>
+    <h1>Você pode votar?</h1>
+    <h2>Idades que votam: </h2>
+    <ul>
+        <li>Menor de 16 anos: Não Vota.</li>
+        <li>Entre 16 e 18 anos: Voto Facultativo.</li>
+        <li>Entre 18 e 65 anos: Voto Obrigatório!</li>
+        <li>Acima de 65 anos: Voto Facultativo.</li>
+    </ul>
+    Qual sua idade? <input type="number" name="txtidade" id="txtidade">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="situacao">
+         Situação: 
+    </div>
+    <script>
+        function verificar(){
+            var txtidade = document.getElementById('txtidade')
+            var idade = Number(txtidade.value)
+            situacao.innerHTML = `Sua idade é ${idade}. `
+            if(idade<16){
+                situacao.innerHTML +=`Não Vota.`
+            }else if ((idade>=16&&idade<18)||idade>65){
+                situacao.innerHTML +=`Voto Facultativo.`
+            }else{
+                situacao.innerHTML += `Voto Obrigatório!`
+                
+            }
+        }
+    </script>
+</body>
+</html>
